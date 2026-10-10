@@ -1,0 +1,19 @@
+graph = {
+    1: [2, 3],
+    2: [4, 5],
+    3: [],
+    4: [5],
+    5: []
+}
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+
+        for n in graph[node]:
+            dfs(n)
+
+dfs(1)
